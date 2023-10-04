@@ -47,3 +47,15 @@ localStorage.setItem("password", "qwe123");
 
 let userName = localStorage.getItem("username");
 let userPassword = localStorage.getItem("password");
+
+window.addEventListener("load", function () {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+        // User is already logged in
+        loginForm.style.display = "none";
+        welcomeMessage.style.display = "block";
+        logoutButton.style.display = "block";
+        shokansoParagraph.classList.remove("shokanso");
+        welcomeMessage.classList.add("small-border");
+    }
+});
